@@ -465,6 +465,7 @@ input::placeholder, textarea::placeholder { color: #90a0b3; }
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
+
  .footer-social-center {
   display: flex;
   justify-content: center;
