@@ -40,9 +40,9 @@
         <div class="card contact-card">
           <span class="eyebrow">Quick Quote Form</span>
           <h2>Request service information</h2>
-        <form id="quoteForm" class="form-grid" action="https://formsubmit.co/info@joyrolalogistics.com" method="POST">
-  <input type="hidden" name="_subject" value="New Quote Request - JOYROLA LOGISTICS">
-  <input type="hidden" name="_captcha" value="false">
+<form id="quoteForm" class="form-grid" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="2fe8e429-0b7b-45d6-b191-1e486f8670d4">
+  <input type="hidden" name="subject" value="New Quote Request - JOYROLA LOGISTICS">
 
   <div><input type="text" name="name" placeholder="Full Name" required></div>
   <div><input type="text" name="company" placeholder="Company Name"></div>
@@ -52,7 +52,31 @@
   <div class="full"><textarea name="message" placeholder="Tell us about your transportation or dispatching needs" required></textarea></div>
   <div class="full"><button class="btn btn-primary" type="submit">Submit Request</button></div>
 </form>
-        </div>
+
+<p id="form-status"></p>
+
+<script>
+const form = document.getElementById("quoteForm");
+const status = document.getElementById("form-status");
+
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: "POST",
+    body: formData
+  });
+
+  if (response.ok) {
+    status.textContent = "Your request was sent successfully.";
+    form.reset();
+  } else {
+    status.textContent = "Something went wrong. Please try again.";
+  }
+});
+</script>        </div>
       </div>
     </section>
 
