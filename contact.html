@@ -40,13 +40,16 @@
         <div class="card contact-card">
           <span class="eyebrow">Quick Quote Form</span>
           <h2>Request service information</h2>
-         <form id="quoteForm" class="form-grid" action="https://formspree.io/f/meerblvr" method="POST">
+        <form id="quoteForm" class="form-grid" action="https://formsubmit.co/info@joyrolalogistics.com" method="POST">
+  <input type="hidden" name="_subject" value="New Quote Request - JOYROLA LOGISTICS">
+  <input type="hidden" name="_captcha" value="false">
+
   <div><input type="text" name="name" placeholder="Full Name" required></div>
   <div><input type="text" name="company" placeholder="Company Name"></div>
   <div><input type="email" name="email" placeholder="Email Address" required></div>
   <div><input type="tel" name="phone" placeholder="Phone Number" required></div>
   <div class="full"><input type="text" name="service" placeholder="Service Needed (Flatbed, Dry Van, Reefer, etc.)"></div>
-  <div class="full"><textarea name="message" placeholder="Tell us about your transportation or dispatching needs"></textarea></div>
+  <div class="full"><textarea name="message" placeholder="Tell us about your transportation or dispatching needs" required></textarea></div>
   <div class="full"><button class="btn btn-primary" type="submit">Submit Request</button></div>
 </form>
         </div>
